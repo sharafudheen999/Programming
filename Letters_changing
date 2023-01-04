@@ -1,0 +1,26 @@
+<?php
+$word = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry';
+$explode = explode(' ',$word);
+echo "<pre>";print_r($explode);
+foreach($explode  as $value){
+	$first_letter[] = substr($value,0,1);
+    $other_letter[] = substr($value,1);
+}
+echo "<pre>";print_r($first_letter);
+echo "<pre>";print_r($other_letter);
+
+array_unshift($first_letter,array_pop($first_letter));
+
+echo "<pre>";print_r($first_letter);
+
+foreach($first_letter  as $key => $value){
+	$final_word[] = $value.$other_letter[$key];
+}
+
+$result = implode(" ",$final_word);
+
+echo "<pre>";print_r($final_word);
+
+echo $result;
+
+?>
